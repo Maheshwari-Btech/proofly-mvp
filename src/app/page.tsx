@@ -1,225 +1,195 @@
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+
+import Link from "next/link";
+import {
+  ArrowRight,
+  CheckCircle2,
+  FileText,
+  GraduationCap,
+  Lightbulb,
+  Target,
+  Users,
+  Zap,
+} from "lucide-react";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Progress } from "@/components/ui/progress";
-import { Separator } from "@/components/ui/separator";
-import { Textarea } from "@/components/ui/textarea";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-zinc-950 text-white">
-      {/* ================= NAVBAR ================= */}
+      {/* NAVBAR */}
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-8">
-        <div className="text-2xl font-bold tracking-tight">
+        <Link href="/" className="text-2xl font-bold tracking-tight">
           proofly<span className="text-violet-400">.</span>
-        </div>
+        </Link>
 
         <div className="hidden items-center gap-8 text-sm text-zinc-400 md:flex">
           <a href="#how-it-works" className="transition hover:text-white">
             How it works
           </a>
-
           <a href="#features" className="transition hover:text-white">
             Features
           </a>
-
           <a href="#about" className="transition hover:text-white">
             About
           </a>
         </div>
 
-        <Button
-          variant="outline"
-          className="border-zinc-700 bg-transparent text-zinc-200 hover:bg-zinc-900"
-        >
-          Sign In
-        </Button>
+        <Link href="/analyze">
+          <Button
+            variant="outline"
+            className="border-zinc-700 bg-transparent text-zinc-200 hover:bg-zinc-900"
+          >
+            Try Proofly
+          </Button>
+        </Link>
       </nav>
 
-      {/* ================= HERO ================= */}
+      {/* HERO */}
       <section className="mx-auto grid max-w-7xl items-center gap-16 px-6 py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
-        {/* Hero text */}
         <div>
           <Badge
             variant="outline"
             className="mb-6 border-violet-500/40 bg-violet-500/10 px-4 py-2 text-violet-300"
           >
-            ✨ AI-powered truth verification
+            <Zap className="mr-2 h-4 w-4" />
+            AI-powered career readiness
           </Badge>
 
           <h1 className="max-w-3xl text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
-            Don't just believe it.
+            Don't just claim you're ready.
             <br />
-            <span className="text-violet-400">Proof it.</span>
+            <span className="text-violet-400">Prove it.</span>
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-400">
-            Proofly uses AI to analyze claims, find supporting evidence,
-            and help you understand what's true, misleading, or worth
-            questioning.
+            Proofly compares the requirements of the opportunities you want
+            with the evidence you've actually built — certificates, projects,
+            and experience — to show how ready you really are.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Button
-              size="lg"
-              className="bg-violet-500 px-8 text-white hover:bg-violet-600"
-            >
-              Start Verifying →
-            </Button>
+            <Link href="/analyze">
+              <Button
+                size="lg"
+                className="w-full bg-violet-500 px-8 text-white hover:bg-violet-600 sm:w-auto"
+              >
+                Check My Readiness
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
 
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-zinc-700 bg-transparent px-8 text-zinc-200 hover:bg-zinc-900"
-            >
-              See How It Works
-            </Button>
+            <a href="#how-it-works">
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full border-zinc-700 bg-transparent px-8 text-zinc-200 hover:bg-zinc-900 sm:w-auto"
+              >
+                See How It Works
+              </Button>
+            </a>
           </div>
 
-          <div className="mt-8 flex items-center gap-3">
-            <div className="flex -space-x-2">
-              <Avatar className="h-8 w-8 border-2 border-zinc-950">
-                <AvatarFallback>AR</AvatarFallback>
-              </Avatar>
-
-              <Avatar className="h-8 w-8 border-2 border-zinc-950">
-                <AvatarFallback>SK</AvatarFallback>
-              </Avatar>
-
-              <Avatar className="h-8 w-8 border-2 border-zinc-950">
-                <AvatarFallback>JM</AvatarFallback>
-              </Avatar>
+          <div className="mt-8 flex items-center gap-3 text-sm text-zinc-500">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-violet-500/10">
+              <GraduationCap className="h-5 w-5 text-violet-400" />
             </div>
-
-            <p className="text-sm text-zinc-500">
-              Built for people who question what they read.
-            </p>
+            Built for students who want to become opportunity-ready.
           </div>
         </div>
 
-        {/* ================= DEMO CARD ================= */}
+        {/* PRODUCT PREVIEW */}
         <div className="relative">
           <div className="absolute -inset-10 rounded-full bg-violet-500/10 blur-3xl" />
 
-          <Card className="relative border-zinc-800 bg-zinc-900/90 shadow-2xl backdrop-blur">
+          <Card className="relative border-zinc-800 bg-zinc-900/90 shadow-2xl">
             <CardHeader>
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs uppercase tracking-widest text-zinc-500">
-                    Proofly Analysis
+                    Proofly Readiness
                   </p>
-
                   <CardTitle className="mt-1 text-xl">
-                    Verify a claim
+                    Frontend Developer Intern
                   </CardTitle>
                 </div>
 
                 <Badge className="bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/10">
-                  Ready
+                  72% Ready
                 </Badge>
               </div>
             </CardHeader>
 
             <CardContent className="space-y-5">
-              <div>
-                <p className="mb-2 text-sm font-medium text-zinc-300">
-                  What do you want to verify?
-                </p>
-
-                <Input
-                  placeholder="Paste a claim or URL..."
-                  className="border-zinc-700 bg-zinc-950 text-white placeholder:text-zinc-600"
-                />
-              </div>
-
-              <div className="relative">
-                <div className="flex items-center gap-3">
-                  <Separator className="flex-1 bg-zinc-800" />
-
-                  <span className="text-xs text-zinc-600">OR</span>
-
-                  <Separator className="flex-1 bg-zinc-800" />
-                </div>
-              </div>
-
-              <div>
-                <p className="mb-2 text-sm font-medium text-zinc-300">
-                  Add more context
-                </p>
-
-                <Textarea
-                  placeholder="Paste the article text, statement, or additional context..."
-                  className="min-h-[100px] resize-none border-zinc-700 bg-zinc-950 text-white placeholder:text-zinc-600"
-                />
-              </div>
-
-              {/* <Button render={<Link href="/analyze" />} >
-                Analyze with Proofly
-              </Button> */}
-              <Link
-                href="/analyze"
-                className="w-full bg-violet-500 text-white hover:bg-violet-600">
-                Analyze with Proofly
-              </Link>
-
-              {/* Example result */}
               <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
                 <div className="flex items-center justify-between">
-                  <p className="text-sm font-medium">Example result</p>
-
-                  <Badge className="bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/10">
-                    Supported
-                  </Badge>
+                  <span className="text-sm text-zinc-400">
+                    Evidence match
+                  </span>
+                  <span className="text-lg font-bold text-emerald-400">
+                    7 / 10
+                  </span>
                 </div>
 
-                <div className="mt-5">
-                  <div className="mb-2 flex justify-between text-sm">
-                    <span className="text-zinc-500">
-                      Confidence score
-                    </span>
-
-                    <span className="font-semibold text-emerald-400">
-                      94%
-                    </span>
-                  </div>
-
-                  <Progress value={94} className="h-2 bg-zinc-800" />
+                <div className="mt-4 h-2 overflow-hidden rounded-full bg-zinc-800">
+                  <div className="h-full w-[72%] rounded-full bg-violet-500" />
                 </div>
+              </div>
 
-                <div className="mt-5 grid grid-cols-2 gap-3">
-                  <div className="rounded-lg border border-zinc-800 p-3">
-                    <p className="text-xs text-zinc-500">
-                      Sources found
-                    </p>
+              <div>
+                <p className="mb-3 text-sm font-medium text-zinc-300">
+                  Requirements
+                </p>
 
-                    <p className="mt-1 text-lg font-semibold">12</p>
-                  </div>
+                <div className="space-y-3">
+                  {[
+                    ["JavaScript", true],
+                    ["React", true],
+                    ["Git", true],
+                    ["CSS", true],
+                    ["REST APIs", false],
+                  ].map(([skill, matched]) => (
+                    <div
+                      key={skill as string}
+                      className="flex items-center justify-between rounded-lg border border-zinc-800 p-3"
+                    >
+                      <span className="text-sm text-zinc-300">
+                        {skill as string}
+                      </span>
 
-                  <div className="rounded-lg border border-zinc-800 p-3">
-                    <p className="text-xs text-zinc-500">
-                      Evidence
-                    </p>
-
-                    <p className="mt-1 text-lg font-semibold">
-                      Strong
-                    </p>
-                  </div>
+                      {matched ? (
+                        <CheckCircle2 className="h-5 w-5 text-emerald-400" />
+                      ) : (
+                        <span className="text-xs text-amber-400">
+                          Skill gap
+                        </span>
+                      )}
+                    </div>
+                  ))}
                 </div>
+              </div>
+
+              <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-4">
+                <p className="text-xs uppercase tracking-wider text-amber-400">
+                  Biggest gap
+                </p>
+                <p className="mt-1 font-semibold">REST APIs</p>
+                <p className="mt-1 text-sm text-zinc-400">
+                  Build one API-based project to strengthen your evidence.
+                </p>
               </div>
             </CardContent>
           </Card>
         </div>
       </section>
 
-      {/* ================= HOW IT WORKS ================= */}
+      {/* HOW IT WORKS */}
       <section
         id="how-it-works"
         className="border-y border-zinc-900 bg-zinc-950/50"
@@ -227,155 +197,170 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-sm font-semibold uppercase tracking-widest text-violet-400">
-              How it works
+              How Proofly works
             </p>
 
             <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-              From claim to clarity.
+              From opportunity to readiness.
             </h2>
+
+            <p className="mt-4 text-zinc-400">
+              Proofly doesn't just tell you what you should learn. It shows
+              you what you're missing and what to do next.
+            </p>
           </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            <Card className="border-zinc-800 bg-zinc-900/40">
-              <CardHeader>
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-violet-500/10 text-violet-400">
-                  01
-                </div>
+          <div className="mt-14 grid gap-6 md:grid-cols-4">
+            {[
+              {
+                number: "01",
+                icon: FileText,
+                title: "Add Opportunity",
+                text: "Upload or paste the job or internship you want.",
+              },
+              {
+                number: "02",
+                icon: GraduationCap,
+                title: "Add Evidence",
+                text: "Show your certificates, projects, resume, and experience.",
+              },
+              {
+                number: "03",
+                icon: Target,
+                title: "Get Your Readiness",
+                text: "Proofly maps opportunity requirements against your evidence.",
+              },
+              {
+                number: "04",
+                icon: Lightbulb,
+                title: "Take Action",
+                text: "Get your biggest skill gap and the next step to close it.",
+              },
+            ].map((item) => {
+              const Icon = item.icon;
 
-                <CardTitle>Submit</CardTitle>
-              </CardHeader>
+              return (
+                <Card
+                  key={item.number}
+                  className="border-zinc-800 bg-zinc-900/40"
+                >
+                  <CardHeader>
+                    <div className="mb-4 flex items-center justify-between">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-violet-500/10">
+                        <Icon className="h-5 w-5 text-violet-400" />
+                      </div>
 
-              <CardContent className="text-zinc-400">
-                Enter a claim, article, statement, or URL that you want
-                Proofly to investigate.
-              </CardContent>
-            </Card>
+                      <span className="text-sm text-zinc-600">
+                        {item.number}
+                      </span>
+                    </div>
 
-            <Card className="border-zinc-800 bg-zinc-900/40">
-              <CardHeader>
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-violet-500/10 text-violet-400">
-                  02
-                </div>
+                    <CardTitle>{item.title}</CardTitle>
+                  </CardHeader>
 
-                <CardTitle>Investigate</CardTitle>
-              </CardHeader>
-
-              <CardContent className="text-zinc-400">
-                AI analyzes the claim and searches for relevant evidence
-                and supporting sources.
-              </CardContent>
-            </Card>
-
-            <Card className="border-zinc-800 bg-zinc-900/40">
-              <CardHeader>
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-violet-500/10 text-violet-400">
-                  03
-                </div>
-
-                <CardTitle>Understand</CardTitle>
-              </CardHeader>
-
-              <CardContent className="text-zinc-400">
-                Get a clear verdict, confidence score, evidence strength,
-                and explanation.
-              </CardContent>
-            </Card>
+                  <CardContent className="text-sm leading-6 text-zinc-400">
+                    {item.text}
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* ================= FEATURES ================= */}
+      {/* FEATURES */}
       <section
         id="features"
         className="mx-auto max-w-7xl px-6 py-24 lg:px-8"
       >
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-violet-400">
-            Features
+            Why Proofly
           </p>
 
           <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-            More than a yes or no.
+            Career readiness backed by evidence.
           </h2>
-
-          <p className="mt-4 text-zinc-400">
-            Proofly gives you the reasoning behind the result.
-          </p>
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           <Card className="border-zinc-800 bg-zinc-900/50">
             <CardHeader>
-              <div className="mb-3 text-3xl">🔍</div>
-              <CardTitle>Claim Analysis</CardTitle>
+              <Target className="mb-3 h-8 w-8 text-violet-400" />
+              <CardTitle>Evidence-Based Matching</CardTitle>
             </CardHeader>
 
             <CardContent className="text-zinc-400">
-              Break complex statements into individual claims that can
-              actually be verified.
+              See which opportunity requirements are actually supported by
+              your certificates, projects, and experience.
             </CardContent>
           </Card>
 
           <Card className="border-zinc-800 bg-zinc-900/50">
             <CardHeader>
-              <div className="mb-3 text-3xl">📚</div>
-              <CardTitle>Evidence Discovery</CardTitle>
+              <Lightbulb className="mb-3 h-8 w-8 text-violet-400" />
+              <CardTitle>Actionable Skill Gaps</CardTitle>
             </CardHeader>
 
             <CardContent className="text-zinc-400">
-              Find relevant sources and see the evidence supporting or
-              contradicting the claim.
+              Instead of a generic skill list, Proofly identifies your biggest
+              gap and recommends what you should do next.
             </CardContent>
           </Card>
 
           <Card className="border-zinc-800 bg-zinc-900/50">
             <CardHeader>
-              <div className="mb-3 text-3xl">🧠</div>
-              <CardTitle>AI Explanation</CardTitle>
+              <Users className="mb-3 h-8 w-8 text-violet-400" />
+              <CardTitle>SkillSwap</CardTitle>
             </CardHeader>
 
             <CardContent className="text-zinc-400">
-              Understand why the claim received its verdict instead of
-              blindly trusting a number.
+              When you need help, connect with peers whose skills complement
+              yours and build together.
             </CardContent>
           </Card>
         </div>
       </section>
 
-      {/* ================= CTA ================= */}
+      {/* CTA */}
       <section id="about" className="px-6 py-24">
         <Card className="mx-auto max-w-5xl border-violet-500/20 bg-violet-500/5">
           <CardContent className="flex flex-col items-center px-6 py-16 text-center">
             <h2 className="text-3xl font-bold sm:text-4xl">
-              Question everything.
+              The opportunity is already there.
               <br />
-              <span className="text-violet-400">Verify what matters.</span>
+              <span className="text-violet-400">
+                Now prove you're ready.
+              </span>
             </h2>
 
             <p className="mt-4 max-w-xl text-zinc-400">
-              Make informed decisions with evidence instead of assumptions.
+              Upload an opportunity and your evidence to discover where you
+              stand and what you should do next.
             </p>
 
-            <Button
-              size="lg"
-              className="mt-8 bg-violet-500 px-8 hover:bg-violet-600"
-            >
-              Start Using Proofly →
-            </Button>
+            <Link href="/analyze">
+              <Button
+                size="lg"
+                className="mt-8 bg-violet-500 px-8 hover:bg-violet-600"
+              >
+                Check My Readiness
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </CardContent>
         </Card>
       </section>
 
-      {/* ================= FOOTER ================= */}
+      {/* FOOTER */}
       <footer className="border-t border-zinc-800 px-6 py-8">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-sm text-zinc-500 sm:flex-row">
-          <p>
-            © 2026 Proofly. Verify before you amplify.
-          </p>
+          <p>© 2026 Proofly. Turn ambition into evidence.</p>
 
-          <p>Built with AI · Next.js · shadcn/ui</p>
+          <p>Built with Next.js · shadcn/ui · AI</p>
         </div>
       </footer>
     </main>
   );
 }
+
