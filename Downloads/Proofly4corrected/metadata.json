@@ -1,0 +1,6 @@
+{
+  "name": "Proofly",
+  "description": "AI-powered career readiness platform that maps evidence to opportunity requirements and provides Career Trials to close skill gaps.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
